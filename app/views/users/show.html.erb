@@ -1,14 +1,28 @@
 <div>
-<img style ="width: 60px" src="<%= @user.photo %>">
+  <img class='photo' style ="width: 60px" src="<%= @user.photo %>">
 <div>
-<h1><%= @user.name %></h1>
-<p>Number posts: <%= @user.postCounter %> </p>
+<h1 class='name'><%= @user.name %></h1>
+<p class='post-count'>Number posts: <%= @user.postCounter %> </p>
 </div>
 </div>
 <h2> Bio </h2>
-<p> <%= @user.bio %> </p>
+<p class='bio'> <%= @user.bio %> </p>
+<br/>
+<br/>
 <h2> Posts </h2>
 <ul>
-
+  <% @post.order(:updated_at).reverse_order.each.with_index do |post, index| %>
+    <% if index < 3  %>
+     <li>
+      <h3><%= post.title %></h3>
+      <p><%= post.text %></p>
+      <p>Comments: <%= post.commentsCounter %></p>
+      <p>Likes: <%= post.likesCounter %></p>
+      <p>count Number: <%= index %></p>
+    </li>
+  <% end %>
+  <% end %>
 </ul>
+<br/>
+<br/>
 

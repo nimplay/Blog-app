@@ -1,6 +1,6 @@
 <h1> Users </h1>
 <% @users.each do |user| %>
-  <%= link_to user_path(user.id) do %>
+  <%= link_to user_path(user.id), class:'user' do %>
     <div>
       <img style ="width: 60px" src="<%= user.photo %>">
       <div>
@@ -10,3 +10,5 @@
     </div>
   <% end %>
 <% end %>
+<br/>
+<br/>
