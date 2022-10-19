@@ -1,17 +1,13 @@
+<h2> Posts </h2>
 <div>
   <img class='photo' style ="width: 60px" src="<%= @user.photo %>">
 <div>
-<h1 class='name'><%= @user.name %></h1>
+<h3 class='name'><%= @user.name %></h3>
 <p class='post-count'>Number posts: <%= @user.postCounter %> </p>
 </div>
 </div>
-<h2> Bio </h2>
-<p class='bio'> <%= @user.bio %> </p>
-<br/>
-<br/>
-<h2> Posts </h2>
 <ul>
-<% @user.last_three_posts.each do |post|%>
+<% @post.each do |post|%>
      <li>
       <h3><%= post.title %></h3>
       <p><%= post.text %></p>
@@ -19,17 +15,15 @@
       <p>Comments: <%= post.commentsCounter %></p>
       <p>Likes: <%= post.likesCounter %></p>
       </div>
+
+      <% post.five_most_recent_comments.each do |comment|%>
+        <% if comment.postId == post.id %>
+          <p> <%= comment.text %> </p>
+        <% end %>
+      <% end %>
     </li>
   <% end %>
 </ul>
 <br/>
 <br/>
 <br/>
-
-<button> See all posts </button>
-
-<br/>
-<br/>
-<br/>
-<br/>
-
