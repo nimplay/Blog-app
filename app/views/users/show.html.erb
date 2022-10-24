@@ -12,21 +12,25 @@
 <h2> Posts </h2>
 <ul>
 <% @user.last_three_posts.each do |post|%>
-     <li>
-      <h3><%= post.title %></h3>
-      <p><%= post.text %></p>
-      <div>
-      <p>Comments: <%= post.commentsCounter %></p>
-      <p>Likes: <%= post.likesCounter %></p>
-      </div>
+    <%= link_to post_path(@user.id, post.id) do%>
+       <li>
+        <h3><%= post.title %></h3>
+        <p><%= post.text %></p>
+        <div>
+        <p>Comments: <%= post.commentsCounter %></p>
+        <p>Likes: <%= post.likesCounter %></p>
+        </div>
     </li>
+    <% end %>
   <% end %>
 </ul>
 <br/>
 <br/>
 <br/>
 
-<button> See all posts </button>
+<button>
+  <%= link_to 'All posts', user_posts_path(@user.id) %>
+</button>
 
 <br/>
 <br/>
