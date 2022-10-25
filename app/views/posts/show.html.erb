@@ -1,17 +1,23 @@
-<p>post # <%= @post.id %> by <%= @user.name %></p>
-<p>comments: <%= @post.commentsCounter%> likes: <%= @post.likesCounter %></p>
-<h1><%= @post.title %></h1>
-<p><%= @post.text %></p>
-<h3>Comments:</h3>
-<ul>
-  <% @post.comments.each do |comment|%>
-    <li>
-      <p>posted by <%= comment.user.name %></p>
-      <p><%= comment.text %></p>
-    </li>
-  <% end %>
-</ul>
-
-<br/>
-<br/>
-<br/>
+<div class='container'>
+<div>
+  <div class='post'>
+    <div class='post-header'>
+      <p>post # <%= @post.id %> by <%= @user.name %></p>
+      <div class='comment-like'>
+      <p>comments: <%= @post.commentsCounter%></p>
+      <p>likes: <%= @post.likesCounter %></p>
+      </div>
+    </div>
+    <h3><%= @post.title %></h3>
+    <p><%= @post.text %></p>
+  </div>
+  <ul class='comment-box'>
+    <% @post.comments.each do |comment|%>
+      <li class='comment'>
+        <h3><%= comment.user.name %>:</h3>
+        <p><%= comment.text %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>
+</div>

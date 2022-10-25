@@ -1,31 +1,32 @@
-<h2> Posts </h2>
-<div>
-  <img class='photo' style ="width: 60px" src="<%= @user.photo %>">
-<div>
-<h3 class='name'><%= @user.name %></h3>
-<p class='post-count'>Number posts: <%= @user.postCounter %> </p>
-</div>
-</div>
-<ul>
-<% @post.each do |post|%>
-    <%= link_to post_path(@user.id, post.id) do%>
-       <li>
-        <h3><%= post.title %></h3>
-        <p><%= post.text %></p>
-        <div>
-        <p>Comments: <%= post.commentsCounter %></p>
-        <p>Likes: <%= post.likesCounter %></p>
-        </div>
+<div class='container' >
+  <h2 class='section-title'> Posts </h2>
+  <div class='user-container'>
+    <img class='user-image' src="<%= @user.photo %>">
+    <div class='user-data'>
+      <h3 class='name'><%= @user.name %></h3>
+      <p class='post-count'>Number posts: <%= @user.postCounter %> </p>
+    </div>
+  </div>
+  <ul class='post-list'>
+    <% @post.each do |post|%>
+      <%= link_to post_path(@user.id, post.id) do%>
+           <li class='post'>
+             <h3><%= post.title %></h3>
+             <p><%= post.text %></p>
+             <div class='comment-like'>
+              <p>Comments: <%= post.commentsCounter %></p>
+              <p>Likes: <%= post.likesCounter %></p>
+             </div>
 
-        <% post.five_most_recent_comments.each do |comment|%>
-          <% if comment.postId == post.id %>
-            <p> <%= comment.text %> </p>
-          <% end %>
-        <% end %>
-      </li>
-    <% end %>
+           </li>
+           <div class='comment-box'>
+             <% post.five_most_recent_comments.each do |comment|%>
+                <% if comment.postId == post.id %>
+                  <p> <%= comment.text %> </p>
+                <% end %>
+             <% end %>
+           </div>
+      <% end %>
   <% end %>
 </ul>
-<br/>
-<br/>
-<br/>
+</div>
