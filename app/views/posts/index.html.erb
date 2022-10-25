@@ -22,7 +22,10 @@
            <div class='comment-box'>
              <% post.five_most_recent_comments.each do |comment|%>
                 <% if comment.postId == post.id %>
-                  <p> <%= comment.text %> </p>
+                  <div class='comment'>
+                    <h3><%= comment.user.name %>:</h3>
+                    <p><%= comment.text %></p>
+                  </div>
                 <% end %>
              <% end %>
            </div>
