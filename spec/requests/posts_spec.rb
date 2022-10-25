@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-
   describe 'GET /index' do
     it 'Response status is 200' do
       get user_posts_path(1)
