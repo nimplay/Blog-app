@@ -26,7 +26,12 @@
     <% end %>
   <% end %>
 </ul>
-<%= link_to user_posts_path(@user.id), class:'button' do%>
-<button class='button'> See all posts </button>
-<% end %>
+
+  <%= link_to user_posts_path(@user.id), class:'button' do%>
+    <button class='button'> See all posts </button>
+  <% end %>
+  <%= link_to user_post_new_path, class:'button' do%>
+    <button class='button'> New Post </button>
+  <% end %>
+
 </div>

@@ -1,0 +1,9 @@
+<h1>Create a new comment</h1>
+<div class='container'>
+
+  <%= form_with class: 'form' do |f| %>
+    <%= f.text_area :title, placeholder: 'Comment', :required => true, class: 'new-text' %>
+    <%= f.submit "Submit", class: 'submit-post' %>
+  <% end %>
+
+</div>

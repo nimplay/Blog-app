@@ -1,0 +1,10 @@
+<h1>new post</h1>
+<div class='container'>
+
+  <%= form_with model: @post, url: user_posts_path, class: 'form' do |f| %>
+    <%= f.text_field :title, placeholder: 'Title', :required => true, class: 'new-user' %>
+    <%= f.text_area :text, placeholder: 'Content', :required => true, class: 'new-text' %>
+    <%= f.submit "Submit", class: 'submit-post' %>
+  <% end %>
+
+</div>
