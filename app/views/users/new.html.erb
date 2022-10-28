@@ -1,9 +1,11 @@
-<h2>new user</h2>
+<h1>log in</h1>
 
-<%= form_with do |f| %>
-  <%= f.text_field :title, placeholder: 'Username', :required => true, class: 'new-user' %>
-  <%= f.text_field :title, placeholder: 'Password', :required => true, class: 'new-user' %>
-  <%= f.submit "Submit", class: 'submit-post' %>
-<% end %>
-<br/>
-<br/>
+<div class='container'>
+
+  <%= form_with class: 'form' do |f| %>
+    <%= f.text_field :title, placeholder: 'Username', :required => true, class: 'new-user' %>
+    <%= f.text_field :title, placeholder: 'Password', :required => true, class: 'new-user' %>
+    <%= f.submit "Submit", class: 'submit-post' %>
+  <% end %>
+
+</div>

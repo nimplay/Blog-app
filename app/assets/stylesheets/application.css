@@ -8,6 +8,13 @@ body {
   align-items: center;
 }
 
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
 .main-title {
   font-size: 4.5rem;
   font-weight: bold;
@@ -143,6 +150,36 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.new-user {
+  height: 2rem;
+  width: 50%;
+  font-size: 1.3rem;
+  border: 2px solid black;
+}
+
+.new-text {
+  height: 10rem;
+  width: 50%;
+  font-size: 1.3rem;
+  border: 2px solid black;
+}
+
+.submit-post {
+  height: 2.5rem;
+  width: 50.5%;
+  font-size: 1.3rem;
+  border: 2px solid black;
+  margin-top: 1rem;
 }
 
 footer {
