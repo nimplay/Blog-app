@@ -18,9 +18,10 @@
        <li class='post'>
         <h3><%= post.title %></h3>
         <p><%= post.text %></p>
+        <p><%= post.id %></p>
         <div class='comment-like'>
-        <p>Comments: <%= post.commentsCounter %></p>
-        <p>Likes: <%= post.likesCounter %></p>
+        <p>💬 <%= post.commentsCounter %></p>
+        <p>❤️ <%= post.likesCounter %></p>
         </div>
     </li>
     <% end %>

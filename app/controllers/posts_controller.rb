@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @post = Post.find(params[:id])
+    @post = Post.find(params[:post_id])
   end
 
   def new
@@ -18,6 +18,8 @@ class PostsController < ApplicationController
     @user = current_user
     @post = Post.new(strong_params)
     @post.author = @user
+    @post.likesCounter = 0
+    @post.commentsCounter = 0
 
     if @post.save
       flash[:success] = 'Post saved!'
@@ -32,6 +34,6 @@ class PostsController < ApplicationController
   private
 
   def strong_params
-    params.require(:post).permit(:title, :text, :likesCounter[0], :comments_counter[0])
+    params.require(:post).permit(:title, :text)
   end
 end

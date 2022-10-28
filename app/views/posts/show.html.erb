@@ -4,8 +4,10 @@
     <div class='post-header'>
       <p>post # <%= @post.id %> by <%= @user.name %></p>
       <div class='comment-like'>
-      <p>comments: <%= @post.commentsCounter%></p>
-      <p>likes: <%= @post.likesCounter %></p>
+        <%= link_to comment_path do%>
+          <p>💬 <%= @post.commentsCounter%></p>
+        <% end %>
+        <p>❤️  <%= @post.likesCounter %></p>
       </div>
     </div>
     <h3><%= @post.title %></h3>
@@ -14,13 +16,11 @@
   <ul class='comment-box'>
     <% @post.comments.each do |comment|%>
       <li class='comment'>
-        <h3><%= comment.user.name %>:</h3>
+        <h3><%= comment.author.name %>:</h3>
         <p><%= comment.text %></p>
       </li>
     <% end %>
   </ul>
 </div>
-<%= link_to comment_path, class:'button' do%>
-  <button class='button'> New comment </button>
-<% end %>
+
 </div>
