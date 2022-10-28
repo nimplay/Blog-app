@@ -12,14 +12,15 @@ class CommentsController < ApplicationController
     @comment.author = current_user
     @comment.postId = @post.id
 
-        if @comment.save
-          flash[:success] = 'Comment was successfully created.'
-          redirect_to post_url(@user.id, @post.id)
-        else
-          flash.now[:error] = 'Please fill all fields'
-          render :new, status: 422
-        end
+    if @comment.save
+      flash[:success] = 'Comment was successfully created.'
+      redirect_to post_url(@user.id, @post.id)
+    else
+      flash.now[:error] = 'Please fill all fields'
+      render :new, status: 422
+    end
   end
+
   def strong_params
     params.require(:comment).permit(:post, :text)
   end
