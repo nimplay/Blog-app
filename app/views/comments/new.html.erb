@@ -1,11 +1,7 @@
-<h1>Create a new comment</h1>
+<h1> Create a new comment </h1>
 <div class='container'>
-
-<h1>Epa<%= @comment %></h1>
-
   <%= form_with model: @comment, url: comment_create_path, class: 'form' do |f| %>
-    <%= f.text_area :title, placeholder: 'Comment', :required => true, class: 'new-text' %>
+    <%= f.text_area :text, placeholder: 'Comment', :required => true, class: 'new-text' %>
     <%= f.submit "Submit", class: 'submit-post' %>
   <% end %>
-
 </div>

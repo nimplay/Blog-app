@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   get 'users/:id/posts/:post_id', to: 'posts#show', as: :post
   get 'users/:id/posts/:post_id/comment/new', to: 'comments#new', as: :comment
   post 'users/:id/posts/create', to: 'posts#create', as: :posts_create
-  post 'users/:id/posts/:post_id/comment/create', to: 'comments#nreate', as: :comment_create
+  post 'users/:id/posts/:post_id/comment/create', to: 'comments#create', as: :comment_create
 end
