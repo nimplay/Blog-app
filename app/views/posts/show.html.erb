@@ -7,7 +7,11 @@
         <%= link_to comment_path do%>
           <p>💬 <%= @post.commentsCounter%></p>
         <% end %>
-        <p>❤️  <%= @post.likesCounter %></p>
+        <%= form_with model: Like, url: like_create_path, method: :post do |f| %>
+          <%= f.submit '❤' %>
+           <%= @post.likesCounter %>
+
+        <% end %>
       </div>
     </div>
     <h3><%= @post.title %></h3>
