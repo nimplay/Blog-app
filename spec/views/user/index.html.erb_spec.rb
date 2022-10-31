@@ -30,5 +30,7 @@ RSpec.describe 'User index page', type: :feature do
     it 'shows number of posts user has written' do
       expect(page.body).to include('Number posts: 0')
     end
+    it 'redirects to that user post when clicked' do
+    end
   end
 end

@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
+  subject = Post.new(title: 'post1', text: 'text1', likesCounter: 0, commentsCounter: 0, author:User.first)
   it 'should allow title shorter than 3 characters' do
     expect(subject.likesCounter).to be >= 0
   end

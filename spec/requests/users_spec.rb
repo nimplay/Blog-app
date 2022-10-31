@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
   @user1 = User.first
-
   describe 'GET /index' do
     it 'Response status is 200' do
       get root_path
