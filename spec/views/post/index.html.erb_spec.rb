@@ -20,9 +20,15 @@ RSpec.describe 'User post index page', type: :feature do
     visit "/users/#{@first_user.id}/posts"
     expect(page).to have_css("img[src*='https://unsplash.com/photos/F_-0BxGuVvo']")
   end
-  
+
   it 'I can see the users username.' do
     visit "/users/#{@first_user.id}/posts"
     expect(page).to have_content('Tom')
   end
+
+  it 'I can see the number of posts the user has written.' do
+    visit "/users/#{@first_user.id}/posts"
+    expect(page).to have_content('Number posts: 4')
+  end
+
 end
