@@ -3,10 +3,7 @@ require 'rails_helper'
 RSpec.describe 'User index page', type: :feature do
   describe 'test' do
     before(:each) do
-      @user = User.create(name: 'Nimrod', bio: 'I am Nimplay',
-                          photo: 'https://icons.iconarchive.com/icons/iconsmind/outline/512/User-icon.png')
-      @id = @user.id
-      Post.create(author: @user, title: 'Hello', text: 'This is my first post')
+      @user = User.first
       visit root_path
     end
 
@@ -20,11 +17,11 @@ RSpec.describe 'User index page', type: :feature do
     end
 
     it 'shows the user photo' do
-      expect(page).to have_css("img[src*='photo']")
+      expect(page).to have_css("img[src*='https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.wellstar.org%2Fphysicians%2Fdavid-caras-md&psig=AOvVaw3Whn9UOK1sgPz5cfMUByK2&ust=1667333274436000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCPDj8c6ii_sCFQAAAAAdAAAAABAF']")
     end
 
     it 'shows the user name' do
-      expect(page.body).to include('Nimrod')
+      expect(page.body).to include('Tom')
     end
 
     it 'shows number of posts user has written' do

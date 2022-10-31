@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
-  @user1 = User.new(name: 'Tom', photo: 'photo', bio: 'Teacher from Mexico.', postCounter: 0)
-  @user1.save
+  @user1 = User.first
 
   describe 'GET /index' do
     it 'Response status is 200' do
