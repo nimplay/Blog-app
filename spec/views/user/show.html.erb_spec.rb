@@ -21,6 +21,9 @@ RSpec.describe 'user_path', type: :system do
 
     it 'shows the user first 3 posts' do
       visit user_path(1)
+      expect(page.body).to include('post3')
+      expect(page.body).to include('post3')
+      expect(page.body).to include('post2')
     end
 
     it 'shows the user button to view all posts' do
