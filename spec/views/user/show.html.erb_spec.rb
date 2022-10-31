@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe 'user_path', type: :system do
   describe 'user show page' do
-
     it 'shows the user photo' do
       visit user_path(User.first)
       expect(page).to have_css("img[src*='#{User.first.photo}']")

@@ -13,7 +13,6 @@ RSpec.describe 'User index page', type: :feature do
 
     it 'shows the Blog app title' do
       expect(page).to have_content('Blog app')
-
     end
 
     it 'shows the user photo' do
@@ -31,7 +30,5 @@ RSpec.describe 'User index page', type: :feature do
     it 'shows number of posts user has written' do
       expect(page.body).to include('Number posts: 0')
     end
-  end
-  it 'clicking on a card' do
   end
 end

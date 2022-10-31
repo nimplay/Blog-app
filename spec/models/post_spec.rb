@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  
   it 'should allow title shorter than 3 characters' do
     expect(subject.likesCounter).to be >= 0
   end
