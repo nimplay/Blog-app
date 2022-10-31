@@ -31,4 +31,9 @@ RSpec.describe 'User post index page', type: :feature do
     expect(page).to have_content('Number posts: 4')
   end
 
+  it 'I can see a posts title.' do
+    visit "/users/#{@first_user.id}/posts"
+    expect(page).to have_content('Hello', count: 4)
+  end
+
 end
