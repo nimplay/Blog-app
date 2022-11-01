@@ -77,6 +77,11 @@ $ bundle install```
 
 - LinkedIn: [nimrod-acosta](https://www.linkedin.com/in/nimrod-acosta-734330169/)
 
+👤 Author1
+
+- GitHub: [@gedewon](https://github.com/gedewon)
+- Twitter: [@gedewon](https://twitter.com/gedewon)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!

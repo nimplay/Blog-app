@@ -21,7 +21,7 @@
 
            </li>
            <div class='comment-box'>
-             <% post.five_most_recent_comments.each do |comment|%>
+             <% post.five_most_recent_comments.includes ([:author]).each do |comment|%>
                 <% if comment.postId == post.id %>
                   <div class='comment'>
                     <h3><%= comment.author.name %>:</h3>
@@ -36,4 +36,5 @@
 <%= link_to user_post_new_path, class:'button' do%>
   <button class='button'> New Post </button>
 <% end %>
+<%= button_to "Paginations"%>
 </div>

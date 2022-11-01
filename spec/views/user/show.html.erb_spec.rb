@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Users', type: :request do
+RSpec.describe 'user_path', type: :system do
   before(:all) do
     @first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
                               bio: 'Teacher from Mexico.', postCounter: 0)
@@ -14,34 +14,32 @@ RSpec.describe 'Users', type: :request do
     @fourth_post = Post.create(authorId: @first_user.id, title: 'Hello', text: 'This is my fourth post',
                                commentsCounter: 0, likesCounter: 0)
   end
+  describe 'user show page' do
+    before do
+      @user = User.first
+    end
+    it 'shows the user photo' do
+      visit user_path(@user)
+      expect(page).to have_css("img[src*='#{@user.photo}']")
+    end
+    it 'shows the user username' do
+      visit user_path(@user)
+      expect(page).to have_content('Tom')
+    end
+    it 'shows the user bio' do
+      visit user_path(@user)
+      expect(page).to have_content('Teacher from Mexico.')
+    end
+    it 'shows the user number of posts' do
+      visit user_path(@user)
+      expect(page).to have_content('Number posts: 4')
+    end
 
-  describe 'GET /index' do
-    it 'Response status is 200' do
-      get root_path
-      expect(response).to have_http_status(200)
-    end
-    it 'Renders the index view template' do
-      get root_path
-      expect(response).to render_template(:index)
-    end
-
-    it 'Rendered view includes correct placeholder text' do
-      get root_path
-      expect(response.body).to include('Blogapp')
-    end
-    it 'Rendered view includes correct placeholder text' do
-      get root_path
-      expect(response.body).to include('Tom')
-    end
-  end
-  describe 'GET /show' do
-    it 'Response status is 200' do
-      get user_path(1)
-      expect(response).to have_http_status(200)
-    end
-    it 'Renders the show view' do
-      get '/users/1'
-      expect(response).to render_template(:show)
+    it 'shows the user first 3 posts' do
+      visit user_path(@user.id)
+      expect(page.body).to include('Hello')
+      expect(page.body).to include('Hello')
+      expect(page.body).to include('Hello')
     end
   end
 end

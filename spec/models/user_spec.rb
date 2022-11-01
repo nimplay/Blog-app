@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { User.new(name: 'Tom', photo: 'photo', bio: 'Teacher from Mexico.', postCounter: 0) }
-
+  subject { User.first }
   it 'should be valid' do
     expect(subject).to be_valid
   end
