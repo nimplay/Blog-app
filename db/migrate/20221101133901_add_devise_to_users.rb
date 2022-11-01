@@ -1,4 +1,4 @@
-class AddPasswordToUsers < ActiveRecord::Migration[7.0]
+class AddDeviseToUsers < ActiveRecord::Migration[7.0]
   def self.up
     change_table :users do |t|
       ## Database authenticatable
