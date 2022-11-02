@@ -23,7 +23,6 @@ gem 'jwt'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 
-
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
