@@ -69,7 +69,7 @@ $ bundle install```
 
 ## Authors
 
-👤 **Nimrod Acosta**
+👤 ** Nimrod Acosta **
 
 - GitHub: [nimplay](https://github.com/nimplay)
 
@@ -77,7 +77,7 @@ $ bundle install```
 
 - LinkedIn: [nimrod-acosta](https://www.linkedin.com/in/nimrod-acosta-734330169/)
 
-👤 Author1
+👤 ** Gedewon Hayle **
 
 - GitHub: [@gedewon](https://github.com/gedewon)
 - Twitter: [@gedewon](https://twitter.com/gedewon)
