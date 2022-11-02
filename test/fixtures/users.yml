@@ -1,13 +1,5 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: Pepe
-  photo: My picture
-  bio: Heloooooo!!
-  postCounter: 1
+one: {}
 
-two:
-  name: Lola
-  photo: My foto
-  bio: what's aaaaaaaaappppp!
-  postCounter: 3
+two: {}

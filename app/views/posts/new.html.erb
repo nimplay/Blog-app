@@ -1,10 +1,9 @@
-<h1>new post</h1>
 <div class='container'>
+<h2 class='section-title'>new post</h2>
 <h1><%=@post.author %></h1>
   <%= form_with model: @post, url: posts_create_path, class: 'form' do |f| %>
     <%= f.text_field :title, placeholder: 'Title', :required => true, class: 'new-user' %>
     <%= f.text_area :text, placeholder: 'Content', :required => true, class: 'new-text' %>
     <%= f.submit "Submit", class: 'submit-post' %>
   <% end %>
-
 </div>

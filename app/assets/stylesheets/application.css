@@ -28,13 +28,29 @@ body {
   width: 100%;
 }
 
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+  height: 3rem;
+  gap: 1rem;
+  padding-right: 3rem;
+}
+
+.nav-bar-icon {
+  color: brown;
+  font-size: 1.5rem;
+}
+
 .section-title {
   font-size: 3.5rem;
   color: brown;
   font-weight: bold;
-  align-self: center;
+  align-self: flex-start;
   text-align: center;
   margin: 0;
+  margin-bottom: 1rem;
 }
 
 .container {
@@ -160,17 +176,30 @@ body {
   width: 100%;
 }
 
+.remenber-me {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .new-user {
   height: 2rem;
   width: 50%;
-  font-size: 1.3rem;
+  font-size: 1rem;
   border: 2px solid black;
 }
 
 .new-text {
   height: 10rem;
   width: 50%;
-  font-size: 1.3rem;
+  font-size: 1rem;
   border: 2px solid black;
 }
 
@@ -180,6 +209,13 @@ body {
   font-size: 1.3rem;
   border: 2px solid black;
   margin-top: 1rem;
+}
+
+.render {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1rem;
 }
 
 footer {

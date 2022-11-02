@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   def index
     @users = User.all
     @current = current_user
@@ -8,9 +9,5 @@ class UsersController < ApplicationController
     @user = current_user
     # @user = User.find(params[:id])
     @post = Post.where(authorId: @user.id)
-  end
-
-  def new
-    @user = User.new
   end
 end

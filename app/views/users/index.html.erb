@@ -4,15 +4,12 @@
   <div class='container' >
     <div class='header'>
       <h2 class='section-title'> Users </h2>
-      <%= link_to new_user_path, class:'button' do%>
-        <button class='button'> Log in </button>
-      <% end %>
     </div>
 
     <% @users.order(:postCounter).reverse_order.each do |user| %>
       <%= link_to user_path(user.id), class:'User' do %>
         <div class='user-container'>
-          <img class='user-image' src="<%= user.photo %>">
+          <img class='user-image' src='<%= user.photo %>'>
           <div class='user-data'>
             <h3> <%= user.name %> </h3>
             <p>Number posts: <%= user.postCounter %> </p>
