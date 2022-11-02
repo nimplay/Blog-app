@@ -4,9 +4,6 @@
   <div class='container' >
     <div class='header'>
       <h2 class='section-title'> Users </h2>
-      <%= link_to new_user_path, class:'button' do%>
-        <button class='button'> Log in </button>
-      <% end %>
     </div>
 
     <% @users.order(:postCounter).reverse_order.each do |user| %>
