@@ -11,9 +11,6 @@ gem 'rails', '~> 7.0.4'
 # CanCanCan for user authorization
 gem 'cancancan', '~> 1.9'
 
-# Devise for user login confirmation
-gem 'devise'
-
 # Figaro for easier env variables
 gem 'figaro'
 
