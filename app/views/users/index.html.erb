@@ -9,7 +9,7 @@
     <% @users.order(:postCounter).reverse_order.each do |user| %>
       <%= link_to user_path(user.id), class:'User' do %>
         <div class='user-container'>
-          <img class='user-image' src="<%= user.photo %>">
+          <img class='user-image' src='<%= user.photo %>'>
           <div class='user-data'>
             <h3> <%= user.name %> </h3>
             <p>Number posts: <%= user.postCounter %> </p>
