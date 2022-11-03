@@ -13,7 +13,7 @@ class User < ApplicationRecord
   # validates :name, presence: true, length: { minimum: 3, maximum: 20 }
   # validates :postCounter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   def admin?
-    role == 'admin'
+    self.role == 'admin'
   end
 
   def last_three_posts

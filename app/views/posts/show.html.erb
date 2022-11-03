@@ -36,13 +36,10 @@
     <% end %>
   </ul>
 </div>
-
+  <% if can? :destroy, @post%>
   <%= link_to "Delete Post", post_delete_path(@post.author, @post), data: {
     turbo_method: :delete,
     turbo_confirm: "Are you sure?"
   } %>
-
-
-
-
+  <%end%>
 </div>
