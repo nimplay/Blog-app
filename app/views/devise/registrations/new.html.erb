@@ -16,11 +16,16 @@
 <em>(<%= @minimum_password_length %> characters minimum)</em>
 <% end %><br />
 <%= f.password_field :password, autocomplete: "new-password", class: 'new-user' %>
-</div> 
+</div>
 <div class="field">
 <%= f.label :password_confirmation %><br />
 <%= f.password_field :password_confirmation, autocomplete: "new-password",class: 'new-user' %>
 </div>
+<div class="field">
+<%= f.label :role %>
+<%= f.text_field :role, autofocus: true, autocomplete: "admin", class: 'new-user', placeholder:"write admin or user" %>
+</div>
+
 <div class="actions">
 <%= f.submit "Sign up", class: 'submit-post' %>
 </div>
@@ -28,4 +33,4 @@
 <div class='render'>
 <%= render "devise/shared/links" %>
 </div>
-</div> 
+</div>

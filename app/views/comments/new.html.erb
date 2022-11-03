@@ -1,3 +1,4 @@
+<%= render 'shared/navbar' %>
 <h1> Create a new comment </h1>
 <div class='container'>
   <%= form_with model: @comment, url: comment_create_path, class: 'form' do |f| %>

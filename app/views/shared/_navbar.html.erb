@@ -1,5 +1,11 @@
+<div class='topbar'>
+<%= link_to root_path do%>
+     <p class='logo'> <%= current_user.name  %> </p>
+<% end %>
 <div class='nav-bar'>
   <%= link_to "Back", :back, class:'nav-bar-icon' %>
   <%= link_to 'Edit Profile', edit_user_registration_path, class:'nav-bar-icon'%>
+  <%= link_to("Log out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class:'nav-bar-icon') %>
+</div>
 </div>
 

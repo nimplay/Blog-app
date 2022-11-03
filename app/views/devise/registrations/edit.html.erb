@@ -47,6 +47,11 @@
     <%= f.password_field :current_password, autocomplete: "current-password", class: 'new-user' %>
   </div>
 
+  <div class="field">
+   <%= f.label :role %>
+   <%= f.text_field :role, autofocus: true, autocomplete: "admin", class: 'new-user', placeholder:"write admin or user" %>
+   </div>
+
   <div class="actions">
     <%= f.submit "Update", class: 'submit-post' %>
   </div>

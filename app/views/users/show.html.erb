@@ -1,3 +1,4 @@
+<%= render 'shared/navbar' %>
 <div class='container'>
   <div class='user-container'>
     <img class='user-image' src="<%= @user.photo %>">
@@ -30,8 +31,9 @@
   <%= link_to user_posts_path(@user.id), class:'button' do%>
     <button class='button'> See all posts </button>
   <% end %>
+  <% if can? :create , @post%>
   <%= link_to user_post_new_path, class:'button' do%>
     <button class='button'> New Post </button>
   <% end %>
-
+  <%end %>
 </div>

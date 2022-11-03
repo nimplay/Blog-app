@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable, :trackable
 
@@ -8,6 +12,9 @@ class User < ApplicationRecord
 
   # validates :name, presence: true, length: { minimum: 3, maximum: 20 }
   # validates :postCounter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  def admin?
+    role == 'admin'
+  end
 
   def last_three_posts
     posts.reverse_order.first(3)
