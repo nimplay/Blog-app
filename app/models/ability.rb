@@ -1,8 +1,8 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
-   can :read, Post, public: true
+  def initialize(_user)
+    can :read, Post, public: true
     can :read, Comment, public: true
 
     return unless current_user.present?
