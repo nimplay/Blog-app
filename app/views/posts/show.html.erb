@@ -16,15 +16,32 @@
     </div>
     <h3><%= @post.title %></h3>
     <p><%= @post.text %></p>
+
+
   </div>
   <ul class='comment-box'>
     <% @post.comments.each do |comment|%>
       <li class='comment'>
+      <div class='comment-cont'>
         <h3><%= comment.author.name %>:</h3>
         <p><%= comment.text %></p>
+      </div>
+        <%= link_to "Delete", comment_delete_path(comment.id, @post.id, comment.id), data: {
+          turbo_method: :delete,
+          turbo_confirm: "Are you sure?"
+        } %>
+
       </li>
     <% end %>
   </ul>
 </div>
+
+  <%= link_to "Delete Post", post_delete_path(@post.author, @post), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+  } %>
+
+
+
 
 </div>

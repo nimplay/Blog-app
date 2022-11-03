@@ -26,6 +26,19 @@ body {
   margin-top: 0;
   height: 7rem;
   width: 100%;
+  margin-bottom: 0;
+}
+
+.topbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  background-color: gainsboro;
+  color: white;
+  padding: 1rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
 }
 
 .nav-bar {
@@ -41,6 +54,14 @@ body {
 .nav-bar-icon {
   color: brown;
   font-size: 1.5rem;
+}
+
+.logo {
+  align-self: flex-start;
+  color: brown;
+  font-size: 2rem;
+  padding-left: 3rem;
+  font-weight: bold;
 }
 
 .section-title {
@@ -153,7 +174,16 @@ body {
   flex-direction: row;
   gap: 0.5rem;
   align-items: center;
+  justify-content: space-between;
   padding: 0.1rem 0 0.1rem 0;
+  margin-right: 1rem;
+}
+
+.comment-cont {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
 }
 
 .comment h3 {

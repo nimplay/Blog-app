@@ -3,9 +3,10 @@ class Comment < ApplicationRecord
   belongs_to :author, class_name: 'User', foreign_key: 'authorId'
 
   after_save :update_comment_counter
+  after_destroy :update_comment_counter
 
   def update_comment_counter
-    post.increment!(:commentsCounter)
+    post.update(commentsCounter: post.comments.count)
   end
 
   private :update_comment_counter

@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
+  #load_and_authorize_resource
   def index
     @user = User.find(params[:id])
     @post = Post.where(authorId: @user.id)
@@ -30,6 +31,13 @@ class PostsController < ApplicationController
       flash.now[:error] = 'Please fill all fields'
       render :new, status: 422
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:post_id])
+    @post.destroy
+
+    redirect_to user_path(params[:id])
   end
 
   private

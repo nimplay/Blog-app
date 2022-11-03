@@ -15,4 +15,7 @@ RSpec.describe User, type: :model do
     subject.name = 'ab'
     expect(subject).to_not be_valid
   end
+  def admin?
+    role == 'admin'
+  end
 end
