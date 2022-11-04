@@ -1,3 +1,5 @@
+### signup
+
 fetch("http://127.0.0.1:3000/signup", {
   method: "post",
   headers: {
@@ -22,3 +24,93 @@ fetch("http://127.0.0.1:3000/signup", {
   })
   .then((json) => console.dir(json))
   .catch((err) => console.error(err));
+
+### login
+fetch("http://127.0.0.1:3000/login", {
+  method: "post", headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({ user: {
+    email: "test1@test.com",
+    password: "password",
+    },
+  }),
+})
+.then((res) => {
+  if (res.ok) {
+    console.log(res.headers.get("Authorization"));
+    localStorage.setItem("token", res.headers.get("Authorization"));
+    return res.json(); } else { throw new Error(res);
+    }
+})
+.then((json) => console.dir(json))
+.catch((err) => console.error(err));
+
+
+
+### list all posts
+fetch("http://localhost:3000/user/1/posts",{
+  headers: {
+    "content-type": "application/jsom",
+    Authorization: localStorage.getItem("token"),
+  },
+})
+.then((res) => {
+  if(res.ok) {
+    return res.json();
+  } else if(res.status == "401") {
+    throw new error("Unauthorrized Request. Must be signed in.");
+  }
+})
+.then((json) => console.dir(json))
+.catch((err) => console.error(err));
+
+
+### new post
+
+fetch("http://localhost:3000/users/1/posts.json", {
+  method: "post", headers: {
+    "Content-Type": "application/json",
+    Authorization: localStorage.getItem("token"),
+  },
+  body: JSON.stringify({ post: {
+    title: "json_3rd", text: "json third post",
+    },
+  }),
+});
+
+
+### comment
+
+fetch("http://localhost:3000/users/1/posts/1/comments", {
+  method: "post", headers: {
+    "Content-Type": "application/json",
+    Authorization: localStorage.getItem("token"),
+  }, body: JSON.stringify({ comment: { text: "json first comment", }, }),
+});
+
+### all commments
+
+fetch("http://localhost:3001/users/1/posts/1/comments.json", {
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: localStorage.getItem("token"),
+  },
+})
+.then((res) => { if (res.ok) {
+  return res.json();
+} else if (res.status == "401") {
+  throw new Error("Unauthorized Request. Must be signed in.");
+  }
+})
+.then((json) => console.dir(json))
+.catch((err) => console.error(err));
+
+### logout
+
+user logout fetch("http://127.0.0.1:3001/logout", {
+  method: "delete", headers: {
+    "Content-Type": "application/json",
+    Authorization: localStorage.getItem("token"),
+  },
+});

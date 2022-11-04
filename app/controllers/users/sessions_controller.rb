@@ -23,4 +23,7 @@ class Users::SessionsController < Devise::SessionsController
       }, status: :unauthorized
     end
   end
+  def configure_sign_in_params
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:post])
+  end
 end
