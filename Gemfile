@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # install devise
 gem 'devise'
+gem 'devise-jwt'
+gem 'fast_jsonapi'
+gem 'rack-cors'
 
 ruby '3.0.1'
 
