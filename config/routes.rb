@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users, path: '', path_names: {
-    sign_in: 'login',
-    sign_out: 'logout',
-    registration: 'signup'
-  },
-  controllers: {
-    sessions: 'users/sessions',
-    registrations: 'users/registrations'
+                                 sign_in: 'login',
+                                 sign_out: 'logout',
+                                 registration: 'signup'
+                               },
+                     controllers: {
+                       sessions: 'users/sessions',
+                       registrations: 'users/registrations'
 
-  }
+                     }
   get '/', to: 'users#index', as: :home
   get '/current_user', to: 'current_user#index'
 
@@ -17,7 +17,6 @@ Rails.application.routes.draw do
       resources :posts
     end
   end
-
 
   get 'users/:id', to: 'users#show', as: :user
   get 'users/:id/posts', to: 'posts#index', as: :user_posts

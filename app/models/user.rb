@@ -3,10 +3,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :validatable,
          :jwt_authenticatable, jwt_revocation_strategy: self
 
-        # devise :database_authenticatable, :registerable,
-        # :recoverable, :rememberable, :validatable
-        # devise :database_authenticatable, :registerable,
-        # :recoverable, :rememberable, :validatable, :confirmable, :trackable
+  # devise :database_authenticatable, :registerable,
+  # :recoverable, :rememberable, :validatable
+  # devise :database_authenticatable, :registerable,
+  # :recoverable, :rememberable, :validatable, :confirmable, :trackable
 
   has_many :posts, foreign_key: 'authorId'
   has_many :comments, foreign_key: 'authorId'
