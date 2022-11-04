@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Posts</h1>
+
+<div id="api_v1_posts">
+  <% @api_v1_posts.each do |api_v1_post| %>
+    <%= render api_v1_post %>
+    <p>
+      <%= link_to "Show this post", api_v1_post %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New post", new_api_v1_post_path %>
